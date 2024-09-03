@@ -32,6 +32,7 @@ from layoffs_staging
 select * from duplicate_cte 
 where row_num >1;
 
+-- Create a new table with row_num as a column
 
 CREATE TABLE `layoffs_staging2` (
   `company` text,
@@ -47,6 +48,8 @@ CREATE TABLE `layoffs_staging2` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 select * from layoffs_staging2;
+
+-- Insert data from layoffs_staging with row_num as a column
 
 insert into layoffs_staging2
 select *,
